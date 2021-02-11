@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 5000;
 let BOT = {};
 if (process.env.NODE_ENV === 'production') {
     BOT = new Telegraf(process.env.BOT_TOKEN);
-    BOT.setWebHook(process.env.HEROKU_URL + process.env.BOT_TOKEN);
+    console.log(process.env.HEROKU_URL + process.env.BOT_TOKEN);
+    BOT.setWebhook(process.env.HEROKU_URL + process.env.BOT_TOKEN);
 } else {
     BOT = new Telegraf(process.env.BOT_TOKEN);
 }
